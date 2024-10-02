@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="product_product_form_view_bom_cost" model="ir.ui.view">
+            <field name="name">product.product.common.form.bom.cost</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='standard_price']/.." position="after">
+                    <field name="total_bom_cost" widget="monetary" options="{'currency_field': 'currency_id'}" groups="base.group_user"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
